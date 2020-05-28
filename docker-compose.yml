@@ -5,7 +5,7 @@ services:
         volumes:
         #  Volumen para sitio
          - $PWD/site:/usr/share/nginx/html
-         - $PWD/site:/usr/share/nginx/new
+         - $PWD/new:/usr/share/nginx/new
         #  Volumen para configuracion Default nginx
          - $PWD/nginx:/etc/nginx/conf.d
         ports:
