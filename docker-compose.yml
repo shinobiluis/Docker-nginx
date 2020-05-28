@@ -1,7 +1,7 @@
 version: '2.0'
 services:
     php_fpm:
-        image: php:fpm
+        image: php:7.0.9-fpm
         volumes:
          - $PWD/new:/usr/share/nginx/new
     web_nginx:
