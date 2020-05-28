@@ -3,13 +3,13 @@ services:
     php_fpm:
         image: php:7.0.9-fpm
         volumes:
-         - $PWD/new:/usr/share/nginx/new
+         - $PWD/php:/usr/share/nginx/php
     web_nginx:
         image: nginx
         volumes:
         #  Volumen para sitio
-         - $PWD/site:/usr/share/nginx/html
-         - $PWD/new:/usr/share/nginx/new
+         - $PWD/html:/usr/share/nginx/html
+         - $PWD/php:/usr/share/nginx/php
         #  Volumen para configuracion Default nginx
          - $PWD/nginx:/etc/nginx/conf.d
         ports:
