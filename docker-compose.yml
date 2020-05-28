@@ -4,6 +4,8 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
+        ports: 
+         - "9001"
         # image: php:7.0.9-fpm
         volumes:
          - $PWD/php:/usr/share/nginx/php
