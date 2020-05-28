@@ -1,0 +1,14 @@
+version: '2.0'
+services:
+    web:
+        image: nginx
+        volumes:
+        #  Volumen para sitio
+         - $PWD/site:/usr/share/nginx/html
+        #  Volumen para configuracion Default nginx
+         - $PWD/nginx:/etc/nginx/conf.d
+        ports:
+         - "8080:80"
+        environment:
+         - NGINX_PORT=80
+        # command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
