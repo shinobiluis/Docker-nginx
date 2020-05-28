@@ -1,8 +1,5 @@
 FROM  php:7.0.9-fpm
 
-# establecer directorio de trabajo
-WORKDIR /usr/share/nginx/php
-
 # Instalar dependencias
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -17,11 +14,6 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl
-
-# Instalar extensiones
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
-RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
-RUN docker-php-ext-install gd
 
 EXPOSE 9000
 CMD ["php-fpm"]
