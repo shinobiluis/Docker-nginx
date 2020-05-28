@@ -13,8 +13,12 @@ RUN apt-get update && apt-get install -y \
         vim \
         unzip \
         git \
-        curl \
-    && docker-php-ext-configure php5.6-sybase \
-    && docker-php-ext-install php5.6-sybase
+        curl 
+
+
+ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
+
+RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
+    install-php-extensions gd xdebug
 
 CMD ["php-fpm"]
