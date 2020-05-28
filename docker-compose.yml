@@ -6,7 +6,8 @@ services:
             dockerfile: Dockerfile
         # image: php:7.0.9-fpm
         volumes:
-         - $PWD/php:/usr/share/nginx/php
+        #  - $PWD/php:/usr/share/nginx/php
+         - $PWD/php:/var/www/html
     web_nginx:
         image: nginx
         volumes:
