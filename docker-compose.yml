@@ -4,6 +4,8 @@ services:
         image: php:7.0.9-fpm
         volumes:
          - $PWD/new:/usr/share/nginx/new
+         ports:
+            - ":9000"
     web_nginx:
         image: nginx
         volumes:
@@ -18,5 +20,5 @@ services:
         environment:
          - NGINX_PORT=80
         # command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
-        depends_on:
+        links:
             - php_fpm
