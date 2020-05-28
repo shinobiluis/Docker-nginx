@@ -1,6 +1,10 @@
 version: '2.0'
 services:
-    web:
+    php_fpm:
+        image: php:fpm
+        volumes:
+         - $PWD/new:/usr/share/nginx/new
+    web_nginx:
         image: nginx
         volumes:
         #  Volumen para sitio
