@@ -1,7 +1,10 @@
 version: '2.0'
 services:
     php_fpm:
-        image: php:7.0.9-fpm
+        build:
+            context: .
+            dockerfile: Dockerfile
+        # image: php:7.0.9-fpm
         volumes:
          - $PWD/php:/usr/share/nginx/php
     web_nginx:
