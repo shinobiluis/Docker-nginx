@@ -14,8 +14,6 @@ RUN apt-get update && apt-get install -y \
         unzip \
         git \
         curl \
-    && docker-php-ext-configure gd \
-    && docker-php-ext-install gd \
     && docker-php-ext-configure php5.6-sybase \
     && docker-php-ext-install php5.6-sybase
 
