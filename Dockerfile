@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
         git \
         curl \
     && docker-php-ext-configure gd \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd \
+    && docker-php-ext-install sybase
 
 CMD ["php-fpm"]
