@@ -1,5 +1,6 @@
 FROM  php:5.6-fpm
 
+# Instalar dependencias
 RUN apt-get update && apt-get install -y \
     build-essential \
     default-mysql-client \
@@ -12,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    docker-php-ext-install gd
 
 CMD ["php-fpm"]
