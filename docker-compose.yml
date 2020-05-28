@@ -4,8 +4,6 @@ services:
         image: php:7.0.9-fpm
         volumes:
          - $PWD/new:/usr/share/nginx/new
-        ports:
-         - "8181:8181"
     web_nginx:
         image: nginx
         volumes:
