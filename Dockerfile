@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
         vim \
         unzip \
         git \
-        curl 
+        curl \
+    && docker-php-ext-configure gd \
+    && docker-php-ext-install gd
 
 CMD ["php-fpm"]
